@@ -53,8 +53,12 @@ if chosen_column != '':
     #copy and paste data from df1 to df2 for same columns with filtering
     df2.loc[df1[chosen_column]==filter_value, chosen_column] = df1[df1[chosen_column] == filter_value][chosen_column]
     df2[chosen_column] = df1[df1[chosen_column] == filter_value][chosen_column]
-
+    
+    #remove rows with empty data from filtered column as there will be empty values in the filtered column as the unwanted values are gone in the column but not the row
     df2 = df2.dropna(subset=[chosen_column])
+    
+    #save the updated df2 to a new excel file
+    df2.to_excel(output_path, index=False)
 
 else:
     #save the updated df2 to a new excel file
