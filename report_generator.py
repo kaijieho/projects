@@ -45,8 +45,6 @@ for column in common_columns:
 #input name of column to filter
 chosen_column = input("Enter the name of the column to filter: ")
 if chosen_column != '':
-    
-
     #input filter value
     filter_value = input("Enter the filter value: ")
 
